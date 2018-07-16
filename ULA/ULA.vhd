@@ -20,19 +20,19 @@ ARCHITECTURE EXEC OF ULA IS
 	 SIGNAL OR_OUT: STD_LOGIC_VECTOR(3 DOWNTO 0);
 	 
 	 BEGIN
-	 ADDER: ENTITY.WORK.ADDER(EXEC) PORT MAP(
-		A => A, B => B, ADD_OUT <= RESULT
+	 ADDER: ENTITY WORK.ADDER(EXEC) PORT MAP(
+		A, B, ADD_OUT
 	 );
 	 
-	 SUB: ENTITY.WORK.SUB(EXEC) PORT MAP(
+	 SUB: ENTITY WORK.SUB(EXEC) PORT MAP(
 		A, B, SUB_OUT
 	 );
 	 
-	 OP_AND: ENTITY.WORK.LOGIC_AND(EXEC) PORT MAP(
+	 OP_AND: ENTITY WORK.LOGIC_AND(EXEC) PORT MAP(
 		A, B, AND_OUT
 	 );
 	 
-	 OP_OR: ENTITY.WORK.LOGIC_OR(EXEC) PORT MAP(
+	 OP_OR: ENTITY WORK.LOGIC_OR(EXEC) PORT MAP(
 		A, B, OR_OUT
 	 );
     
@@ -40,13 +40,13 @@ ARCHITECTURE EXEC OF ULA IS
         BEGIN
             CASE CONTROLLER IS
                 WHEN "000" =>
-                    RESULT <= ADDER;
+                    RESULT <= ADD_OUT;
                 WHEN "001" =>
-                    RESULT <= SUB;
+                    RESULT <= SUB_OUT;
                 WHEN "010" =>
-                    RESULT <= OP_AND;
+                    RESULT <= AND_OUT;
                 WHEN "011" =>
-                    RESULT <= OP_OR;
+                    RESULT <= OR_OUT;
                 WHEN OTHERS =>
                     RESULT <= "XXXX";
             END CASE;
