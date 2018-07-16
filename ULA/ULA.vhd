@@ -1,6 +1,6 @@
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 
 ENTITY ULA IS
@@ -8,25 +8,47 @@ ENTITY ULA IS
         A: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         B: IN STD_LOGIC_VECTOR(3 DOWNTO 0);
         CONTROLLER: IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        RESULT: OU STD_LOGIC_VECTOR(3 DOWNTO 0);
+        RESULT: OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 END ULA;    
 
 ARCHITECTURE EXEC OF ULA IS
-    BEGIN
-        PROCESS(A, B ,CONTROLLER)
+	 
+	 SIGNAL ADD_OUT: STD_LOGIC_VECTOR(3 DOWNTO 0);
+	 SIGNAL SUB_OUT: STD_LOGIC_VECTOR(3 DOWNTO 0);
+	 SIGNAL AND_OUT: STD_LOGIC_VECTOR(3 DOWNTO 0);
+	 SIGNAL OR_OUT: STD_LOGIC_VECTOR(3 DOWNTO 0);
+	 
+	 BEGIN
+	 ADDER: ENTITY.WORK.ADDER(EXEC) PORT MAP(
+		A => A, B => B, ADD_OUT <= RESULT
+	 );
+	 
+	 SUB: ENTITY.WORK.SUB(EXEC) PORT MAP(
+		A, B, SUB_OUT
+	 );
+	 
+	 OP_AND: ENTITY.WORK.LOGIC_AND(EXEC) PORT MAP(
+		A, B, AND_OUT
+	 );
+	 
+	 OP_OR: ENTITY.WORK.LOGIC_OR(EXEC) PORT MAP(
+		A, B, OR_OUT
+	 );
+    
+    PROCESS(A, B ,CONTROLLER)
         BEGIN
             CASE CONTROLLER IS
                 WHEN "000" =>
-                    RESULT <= A + B;
+                    RESULT <= ADDER;
                 WHEN "001" =>
-                    RESULT <= A + (NOT B) + 1;
+                    RESULT <= SUB;
                 WHEN "010" =>
-                    RESULT <= A AND B;
+                    RESULT <= OP_AND;
                 WHEN "011" =>
-                    RESULT <= A OR B
+                    RESULT <= OP_OR;
                 WHEN OTHERS =>
-                    RESULT <= "XXXX"
+                    RESULT <= "XXXX";
             END CASE;
         END PROCESS;
     END EXEC;
