@@ -1,5 +1,5 @@
 Assembler report for ULA
-Mon Jul 16 09:48:33 2018
+Tue Jul 17 15:42:32 2018
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,11 +38,11 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jul 16 09:48:33 2018 ;
+; Assembler Status      ; Successful - Tue Jul 17 15:42:32 2018 ;
 ; Revision Name         ; ULA                                   ;
 ; Top-level Entity Name ; ULA                                   ;
 ; Family                ; Cyclone II                            ;
-; Device                ; EP2C5T144C6                           ;
+; Device                ; EP2C35F672C6                          ;
 +-----------------------+---------------------------------------+
 
 
@@ -93,9 +93,9 @@ applicable agreement for further details.
 +----------------+------------------+
 ; Option         ; Setting          ;
 +----------------+------------------+
-; Device         ; EP2C5T144C6      ;
-; JTAG usercode  ; 0x00075757       ;
-; Checksum       ; 0x00075757       ;
+; Device         ; EP2C35F672C6     ;
+; JTAG usercode  ; 0x002FB65E       ;
+; Checksum       ; 0x002FB65E       ;
 +----------------+------------------+
 
 
@@ -104,9 +104,9 @@ applicable agreement for further details.
 +--------------------+--------------+
 ; Option             ; Setting      ;
 +--------------------+--------------+
-; Device             ; EPCS4        ;
+; Device             ; EPCS16       ;
 ; JTAG usercode      ; 0x00000000   ;
-; Checksum           ; 0x0752F24C   ;
+; Checksum           ; 0x1C785F7F   ;
 ; Compression Ratio  ; 3            ;
 +--------------------+--------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jul 16 09:48:31 2018
+    Info: Processing started: Tue Jul 17 15:42:29 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ULA -c ULA
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 325 megabytes
-    Info: Processing ended: Mon Jul 16 09:48:33 2018
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 342 megabytes
+    Info: Processing ended: Tue Jul 17 15:42:32 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

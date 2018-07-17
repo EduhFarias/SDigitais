@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ULA
-Mon Jul 16 10:36:44 2018
+Tue Jul 17 15:42:13 2018
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,13 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +42,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Mon Jul 16 10:36:44 2018               ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 17 15:42:13 2018           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ULA                                             ;
 ; Top-level Entity Name              ; ULA                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 17                                              ;
+;     Total combinational functions  ; 17                                              ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 15                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -58,6 +64,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
 ; Top-level entity name                                                      ; ULA                ; ULA                ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -148,45 +155,138 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++---------------------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path            ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++---------------------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; ../Downloads/SDigitais-master/ULA/ADDER.vhd ; yes             ; User VHDL File  ; /home/alunoic/Downloads/SDigitais-master/ULA/ADDER.vhd ;         ;
+; ../Downloads/SDigitais-master/ULA/AND.vhd   ; yes             ; User VHDL File  ; /home/alunoic/Downloads/SDigitais-master/ULA/AND.vhd   ;         ;
+; ../Downloads/SDigitais-master/ULA/OR.vhd    ; yes             ; User VHDL File  ; /home/alunoic/Downloads/SDigitais-master/ULA/OR.vhd    ;         ;
+; ../Downloads/SDigitais-master/ULA/SUB.vhd   ; yes             ; User VHDL File  ; /home/alunoic/Downloads/SDigitais-master/ULA/SUB.vhd   ;         ;
+; ../Downloads/SDigitais-master/ULA/ULA.vhd   ; yes             ; User VHDL File  ; /home/alunoic/Downloads/SDigitais-master/ULA/ULA.vhd   ;         ;
++---------------------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimated Total logic elements              ; 17            ;
+;                                             ;               ;
+; Total combinational functions               ; 17            ;
+; Logic element usage by number of LUT inputs ;               ;
+;     -- 4 input functions                    ; 4             ;
+;     -- 3 input functions                    ; 7             ;
+;     -- <=2 input functions                  ; 6             ;
+;                                             ;               ;
+; Logic elements by mode                      ;               ;
+;     -- normal mode                          ; 13            ;
+;     -- arithmetic mode                      ; 4             ;
+;                                             ;               ;
+; Total registers                             ; 0             ;
+;     -- Dedicated logic registers            ; 0             ;
+;     -- I/O registers                        ; 0             ;
+;                                             ;               ;
+; I/O pins                                    ; 15            ;
+; Embedded Multiplier 9-bit elements          ; 0             ;
+; Maximum fan-out node                        ; CONTROLLER[0] ;
+; Maximum fan-out                             ; 9             ;
+; Total fan-out                               ; 53            ;
+; Average fan-out                             ; 1.66          ;
++---------------------------------------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ULA                       ; 17 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 15   ; 0            ; |ULA                ; work         ;
+;    |SUB:SUB|               ; 17 (17)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA|SUB:SUB        ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |ULA|Mux3                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jul 16 10:36:42 2018
+    Info: Processing started: Tue Jul 17 15:42:10 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ULA -c ULA
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Error (10500): VHDL syntax error at ULA.vhd(23) near text ".";  expecting an identifier, or a string literal File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 23
-Error (10500): VHDL syntax error at ULA.vhd(23) near text "PORT";  expecting "(", or "'", or "." File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 23
-Error (10437): VHDL Association List error at ULA.vhd(24): positional associations must be listed before named associations File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 24
-Error (10500): VHDL syntax error at ULA.vhd(25) near text ";";  expecting "<=" File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 25
-Error (10500): VHDL syntax error at ULA.vhd(27) near text ".";  expecting an identifier, or a string literal File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 27
-Error (10500): VHDL syntax error at ULA.vhd(27) near text "PORT";  expecting "(", or "'", or "." File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 27
-Error (10500): VHDL syntax error at ULA.vhd(29) near text ";";  expecting "<=" File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 29
-Error (10500): VHDL syntax error at ULA.vhd(31) near text ".";  expecting an identifier, or a string literal File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 31
-Error (10500): VHDL syntax error at ULA.vhd(31) near text "PORT";  expecting "(", or "'", or "." File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 31
-Error (10500): VHDL syntax error at ULA.vhd(33) near text ";";  expecting "<=" File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 33
-Error (10500): VHDL syntax error at ULA.vhd(35) near text ".";  expecting an identifier, or a string literal File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 35
-Error (10500): VHDL syntax error at ULA.vhd(35) near text "PORT";  expecting "(", or "'", or "." File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 35
-Error (10500): VHDL syntax error at ULA.vhd(37) near text ";";  expecting "<=" File: /home/alunoic/Documentos/Teste/ULA.vhd Line: 37
-Info (12021): Found 0 design units, including 0 entities, in source file ULA.vhd
-Info (12021): Found 2 design units, including 1 entities, in source file OR.vhd
-    Info (12022): Found design unit 1: LOGIC_OR-EXEC
-    Info (12023): Found entity 1: LOGIC_OR
-Info (12021): Found 2 design units, including 1 entities, in source file AND.vhd
-    Info (12022): Found design unit 1: LOGIC_AND-EXEC
-    Info (12023): Found entity 1: LOGIC_AND
-Info (12021): Found 2 design units, including 1 entities, in source file ADDER.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /home/alunoic/Downloads/SDigitais-master/ULA/ADDER.vhd
     Info (12022): Found design unit 1: ADDER-EXEC
     Info (12023): Found entity 1: ADDER
-Info (12021): Found 2 design units, including 1 entities, in source file SUB.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /home/alunoic/Downloads/SDigitais-master/ULA/AND.vhd
+    Info (12022): Found design unit 1: LOGIC_AND-EXEC
+    Info (12023): Found entity 1: LOGIC_AND
+Info (12021): Found 2 design units, including 1 entities, in source file /home/alunoic/Downloads/SDigitais-master/ULA/OR.vhd
+    Info (12022): Found design unit 1: LOGIC_OR-EXEC
+    Info (12023): Found entity 1: LOGIC_OR
+Info (12021): Found 2 design units, including 1 entities, in source file /home/alunoic/Downloads/SDigitais-master/ULA/SUB.vhd
     Info (12022): Found design unit 1: SUB-EXEC
     Info (12023): Found entity 1: SUB
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 13 errors, 1 warning
-    Error: Peak virtual memory: 355 megabytes
-    Error: Processing ended: Mon Jul 16 10:36:44 2018
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Info (12021): Found 2 design units, including 1 entities, in source file /home/alunoic/Downloads/SDigitais-master/ULA/ULA.vhd
+    Info (12022): Found design unit 1: ULA-EXEC
+    Info (12023): Found entity 1: ULA
+Info (12127): Elaborating entity "ULA" for the top level hierarchy
+Warning (10492): VHDL Process Statement warning at ULA.vhd(43): signal "ADD_OUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(45): signal "SUB_OUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(47): signal "AND_OUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ULA.vhd(49): signal "OR_OUT" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12129): Elaborating entity "ADDER" using architecture "A:exec" for hierarchy "ADDER:ADDER"
+Info (12129): Elaborating entity "SUB" using architecture "A:exec" for hierarchy "SUB:SUB"
+Info (12129): Elaborating entity "LOGIC_AND" using architecture "A:exec" for hierarchy "LOGIC_AND:OP_AND"
+Info (12129): Elaborating entity "LOGIC_OR" using architecture "A:exec" for hierarchy "LOGIC_OR:OP_OR"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CONTROLLER[2]"
+Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 17 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 365 megabytes
+    Info: Processing ended: Tue Jul 17 15:42:13 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
