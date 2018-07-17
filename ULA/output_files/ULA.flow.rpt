@@ -1,6 +1,6 @@
 Flow report for ULA
-Tue Jul 17 15:42:41 2018
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Jul 17 16:31:57 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -40,8 +40,8 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jul 17 15:42:41 2018           ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Flow Status                        ; Successful - Tue Jul 17 16:31:57 2018           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; ULA                                             ;
 ; Top-level Entity Name              ; ULA                                             ;
 ; Family                             ; Cyclone II                                      ;
@@ -64,29 +64,27 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 07/17/2018 15:42:11 ;
+; Start date & time ; 07/17/2018 16:31:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ULA                 ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.153185293107371                     ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 250763203212060.153185589407812 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -94,26 +92,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 359 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 473 MB              ; 00:00:09                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 342 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 296 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 313 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:18     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 507 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 730 MB              ; 00:00:08                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 438 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 419 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 394 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                           ;
-+---------------------------+------------------+--------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name      ; OS Version ; Processor type ;
-+---------------------------+------------------+--------------+------------+----------------+
-; Analysis & Synthesis      ; LabXXmYY         ; Ubuntu 16.10 ; 16         ; x86_64         ;
-; Fitter                    ; LabXXmYY         ; Ubuntu 16.10 ; 16         ; x86_64         ;
-; Assembler                 ; LabXXmYY         ; Ubuntu 16.10 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; LabXXmYY         ; Ubuntu 16.10 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; LabXXmYY         ; Ubuntu 16.10 ; 16         ; x86_64         ;
-+---------------------------+------------------+--------------+------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; IC-139957        ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; IC-139957        ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; IC-139957        ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; IC-139957        ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; IC-139957        ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
