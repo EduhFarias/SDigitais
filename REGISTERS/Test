@@ -1,6 +1,7 @@
 Descrição dos registradores:
 	https://www.tjhsst.edu/~dhyatt/arch/mic1.html
 	http://dsearls.org/courses/C391OrgSys/SimHelp/HTML/IJVM_Register_Set.htm
+	https://www.xilinx.com/support/documentation/university/Vivado-Teaching/HDL-Design/2015x/VHDL/docs-pdf/lab6.pdf
 
 Shift Register em VHDL:
 	https://www.embarcados.com.br/implementacao-de-um-shift-register-em-vhdl/
