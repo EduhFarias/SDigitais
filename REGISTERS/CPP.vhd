@@ -1,4 +1,5 @@
--- Constant Pool Pointer
+-- Constant Pool Pointer: When interpreting machine language programs, 
+-- this register points to the constant pool.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
