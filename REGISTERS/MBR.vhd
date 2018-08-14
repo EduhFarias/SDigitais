@@ -1,4 +1,4 @@
--- Memory Buffer Register
+-- Memory Buffer Register: This register stores a single byte read from the memory cell addressed by PC. 
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
