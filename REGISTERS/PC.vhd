@@ -1,4 +1,5 @@
---Program Counter
+-- Program Counter: This register serves as the program counter and holds 
+-- the address of the next byte in the instruction stream.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
