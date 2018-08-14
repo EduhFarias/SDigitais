@@ -1,4 +1,4 @@
--- Stack Pointer
+-- Stack Pointer: This register serves as the stack pointer.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
