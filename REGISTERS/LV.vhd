@@ -1,4 +1,5 @@
--- Local Variables
+-- Local Variables: When interpreting machine language programs, 
+-- this register points to the local variables of the currently executing method.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
