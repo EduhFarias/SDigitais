@@ -1,4 +1,4 @@
--- Top
+-- Top of Stack: This register always contains a copy of the value at the top of the stack.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
