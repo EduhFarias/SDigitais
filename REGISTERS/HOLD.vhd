@@ -1,4 +1,6 @@
--- Hold
+-- Hold: This register holds data that is to be supplied 
+-- to the left (A) input of the arithmetic logic unit.
+
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
