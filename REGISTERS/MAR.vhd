@@ -1,4 +1,4 @@
--- Memory Address Register
+-- Memory Address Register: Stores the address of the 32-bit word that is being written to or read from memory.
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
