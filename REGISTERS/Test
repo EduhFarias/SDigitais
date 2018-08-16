@@ -10,3 +10,6 @@ Shift Register em VHDL:
 	
 Alguns exemplos de registradores em vhdl:
 	https://github.com/enddo/VHDL-Codes
+	
+Registradores com memória:
+	http://www.eng.auburn.edu/~nelson/courses/elec4200/Slides/VHDL%205%20Memory%20Models.pdf
