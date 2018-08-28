@@ -1,11 +1,12 @@
--- Program Counter: This register serves as the program counter and holds 
--- the address of the next byte in the instruction stream.
+-- Hold: This register holds data that is to be supplied 
+-- to the left (A) input of the arithmetic logic unit.
+
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
-ENTITY PC IS
+ENTITY H IS
 	port(	
 		DATA_INPUT :	IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		CLK :	IN STD_LOGIC;
@@ -13,21 +14,21 @@ ENTITY PC IS
 		CLEAR :	IN STD_LOGIC;
 		DATA_OUTPUT :	OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
 	);
-END PC;
+END H;
 
 
-ARCHITECTURE EXEC OF PC IS
+ARCHITECTURE EXEC OF H IS
 
 BEGIN
 	
     PROCESS(DATA_INPUT, CLK, LOAD, CLEAR)
     BEGIN
 
-	IF RISING_EDGE(CLK) THEN
-	    IF LOAD = '0' THEN
+	IF CLEAR = '1' THEN
+            DATA_OUTPUT <= "0000";
+	ELSIF RISING_EDGE(CLK) THEN
+	    IF LOAD = '1' THEN
 		    DATA_OUTPUT <= DATA_INPUT;
-	    ELSE
-		    DATA_OUTPUT <= "0000"; 
 	    END IF;
 	END IF;
 
