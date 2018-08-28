@@ -1,6 +1,11 @@
 -- Old Program Counter: When interpreting machine language programs, 
 -- this register is used to store the old program counter and also as a scratchpad register.
 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
 ENTITY OPC IS
 	port(	
 		DATA_INPUT :	IN STD_LOGIC_VECTOR(3 DOWNTO 0);
