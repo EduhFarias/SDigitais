@@ -27,7 +27,7 @@ BEGIN
 	    IF LOAD = '0' THEN
 		    DATA_OUTPUT <= DATA_INPUT;
 	    ELSE
-		    DATA_OUTPUT <= "0000"; -- Proxima instrução, necessário acesso a memoria
+		    DATA_OUTPUT <= "0000"; 
 	    END IF;
 	END IF;
 
