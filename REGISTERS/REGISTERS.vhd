@@ -9,7 +9,8 @@ ENTITY REGISTERS IS
 		CLK        :	IN STD_LOGIC;
 		LOAD       :	IN STD_LOGIC;
 		CLEAR      :	IN STD_LOGIC;
-		DATA_OUTPUT:	OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+		DATA_OUTPUT:	OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		CONTROLLER :   IN STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 END REGISTERS;    
 
@@ -92,7 +93,7 @@ ARCHITECTURE EXEC OF REGISTERS IS
 					 WHEN "1010" =>
                     DATA_OUTPUT <= H_OUT;	  
 					 WHEN OTHERS =>
-                    RESULT <= "XXXX";
+                    DATA_OUTPUT <= "XXXX";
             END CASE;
         END PROCESS;
     END EXEC;
