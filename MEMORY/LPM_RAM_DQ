@@ -1,0 +1,58 @@
+--COMPONENT lpm_ram_dq
+--   GENERIC (
+--            LPM_WIDTH: POSITIVE;
+--            LPM_TYPE : STRING := L_RAM_DQ;
+--            LPM_WIDTHAD: POSITIVE;
+--            LPM_NUMWORDS: STRING := UNUSED;
+--            LPM_FILE: STRING := UNUSED;
+--            LPM_INDATA: STRING := REGISTERED;
+--            LPM_ADDRESS_CONTROL : STRING := REGISTERED;
+--            LPM_OUTDATA: STRING := REGISTERED
+--            );
+--   PORT    (
+--            data     : IN STD_LOGIC_VECTOR(LPM_WIDTH-1 DOWNTO 0);
+--            we       : IN STD_LOGIC := '1';
+--            inclock  : IN STD_LOGIC := '1';
+--            outclock : IN STD_LOGIC := '1';
+--            address  : IN STD_LOGIC_VECTOR(LPM_WIDTHAD-1 DOWNTO 0);
+--            q        : OUT STD_LOGIC_VECTOR (LPM_WIDTH-1 DOWNTO 0)
+--           );
+--END COMPONENT;
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+LIBRARY LPM;
+USE LPM.LPM_COMPONENTS.ALL;
+
+ENTITY MEM_RAM IS
+  PORT(
+    DATA_INPUT : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- DADO DE ENTRADA
+    WE         : IN STD_LOGIC;                    -- WRITE ENABLE
+    CLK        : IN STD_LOGIC;                    -- CLOCK
+    ADDR       : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- BARRAMENTO DE ENDEREÇO
+    DATA_OUTPUT: OUT STD_LOGIC_VECTOR(3 DOWNTO 0) -- DADO DE SAIDA
+  );
+  
+ARCHITECTURE STRUCT OF MEM_RAM IS
+  SIGNAL VCC : STD_LOGIC;
+  
+  BEGIN
+    VCC <= '1'; -- OU USAR UM CLOCK OUTRO CLOCK DE ENTRADA
+    
+    U1: LPM_RAM_DQ
+      GENERIC MAP(
+        LPM_WIDTH   => 4, -- ARMAZENAMENTO
+        LPM_WIDTHAD => 4, -- TAMANHO DO ENDEREÇO
+        LPM_INDATA  => "UNREGISTERED",
+        LPM_OUTDATA => "UNREGISTERED"
+      )
+      
+      PORT MAP(
+        DATA      => DATA_INPUT;
+        ADDRESS   => ADDR;
+        WE        => WE;
+        Q         => DATA_OUTPUT;
+        INCLOCK   => VCC;
+        OUTCLOCK  => CLK
+      ):
+END STRUCT;     
