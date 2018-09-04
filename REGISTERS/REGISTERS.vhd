@@ -5,12 +5,12 @@ USE IEEE.STD_LOGIC_ARITH.ALL;
 
 ENTITY REGISTERS IS
     PORT(
-		DATA_INPUT :	IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+		C_BUS 	   :	IN STD_LOGIC_VECTOR(3 DOWNTO 0);
 		CLK        :	IN STD_LOGIC;
 		LOAD       :	IN STD_LOGIC;
 		CLEAR      :	IN STD_LOGIC;
-		DATA_OUTPUT:	OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-		CONTROLLER :   IN STD_LOGIC_VECTOR(3 DOWNTO 0)
+		B_BUS,A_BUS:	OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+		CONTROLLER :    IN STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 END REGISTERS;    
 
@@ -29,71 +29,71 @@ ARCHITECTURE EXEC OF REGISTERS IS
 	 
 	 BEGIN
 	 MAR: ENTITY WORK.MAR(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, MAR_OUT
+		C_BUS, CLK, LOAD, CLEAR, MAR_OUT
 	 );
 	 
 	 MDR: ENTITY WORK.MDR(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, MDR_OUT
+		C_BUS, CLK, LOAD, CLEAR, MDR_OUT
 	 );
 	 
 	 PC: ENTITY WORK.PC(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, PC_OUT
+		C_BUS, CLK, LOAD, CLEAR, PC_OUT
 	 );
 	 
 	 MBR: ENTITY WORK.MBR(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, MBR_OUT
+		C_BUS, CLK, LOAD, CLEAR, MBR_OUT
 	 );
     
 	 SP: ENTITY WORK.SP(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, SP_OUT
+		C_BUS, CLK, LOAD, CLEAR, SP_OUT
 	 );
 	 
 	 LV: ENTITY WORK.LV(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, LV_OUT
+		C_BUS, CLK, LOAD, CLEAR, LV_OUT
 	 );
 	 
 	 CPP: ENTITY WORK.CPP(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, CPP_OUT
+		C_BUS, CLK, LOAD, CLEAR, CPP_OUT
 	 );
 	 
 	 TOS: ENTITY WORK.TOS(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, TOS_OUT
+		C_BUS, CLK, LOAD, CLEAR, TOS_OUT
 	 );
 	 
 	 OPC: ENTITY WORK.OPC(EXEC) PORT MAP(
-		DATA_INPUT, CLK, LOAD, CLEAR, OPC_OUT
+		C_BUS, CLK, LOAD, CLEAR, OPC_OUT
 	 );
 	 
-	 H: ENTITY WORK.H(EXEC) PORT MAP( -- COLOCAR SAIDA NA ULA
-		DATA_INPUT, CLK, LOAD, CLEAR, H_OUT
+	 H: ENTITY WORK.H(EXEC) PORT MAP(
+		C_BUS, CLK, LOAD, CLEAR, H_OUT
 	 );
 	 
 	 --ADD UM CONTROLLER PARA SELECIONAR O REGISTRADOR 
     PROCESS(CONTROLLER)
         BEGIN
+	    A_BUS <= H_OUT; -- DIRECIONA PARA ENTRADA 'A' DA ULA 
+		
             CASE CONTROLLER IS
                 WHEN "0000" =>
-                    DATA_OUTPUT <= MAR_OUT;
+                    B_BUS <= MDR_OUT;
                 WHEN "0001" =>
-                    DATA_OUTPUT <= MDR_OUT;
+                    B_BUS <= PC_OUT;
                 WHEN "0010" =>
-                    DATA_OUTPUT <= PC_OUT;
+                    B_BUS <= MBR_OUT;
                 WHEN "0011" =>
-                    DATA_OUTPUT <= MBR_OUT;
+                    B_BUS <= MBRU_OUT;
                 WHEN "0100" =>
-                    DATA_OUTPUT <= SP_OUT;
-					 WHEN "0101" =>
-                    DATA_OUTPUT <= LV_OUT;
-					 WHEN "0111" =>
-                    DATA_OUTPUT <= CPP_OUT;
-					 WHEN "1000" =>
-                    DATA_OUTPUT <= TOS_OUT;
-					 WHEN "1001" =>
-                    DATA_OUTPUT <= OPC_OUT;
-					 WHEN "1010" =>
-                    DATA_OUTPUT <= H_OUT;	  
-					 WHEN OTHERS =>
-                    DATA_OUTPUT <= "XXXX";
+                    B_BUS <= SP_OUT;
+		WHEN "0101" =>
+                    B_BUS <= LV_OUT;
+		WHEN "0111" =>
+                    B_BUS <= CPP_OUT;
+		WHEN "1000" =>
+                    B_BUS <= TOS_OUT;
+		WHEN "1001" =>
+                    B_BUS <= OPC_OUT;	  
+		WHEN OTHERS =>
+                    B_BUS <= "XXXX";
             END CASE;
         END PROCESS;
     END EXEC;
