@@ -1,4 +1,4 @@
---COMPONENT lpm_ram_dq
+--COMPONENT lpm_ram_dq                        Outra opção é usar BRAM, blocos de RAM
 --   GENERIC (
 --            LPM_WIDTH: POSITIVE;
 --            LPM_TYPE : STRING := L_RAM_DQ;
