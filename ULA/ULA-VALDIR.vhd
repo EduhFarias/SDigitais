@@ -36,7 +36,7 @@ PROCESS(A,B,CON)
 		Res <= outAdd; -- A+B
 	    WHEN "111111" =>						
 	      	Res <= outSub; -- B-A
-       	    WHEN "001100" =>
+	WHEN "001100" =>
 	      	Res <= outAnd; -- A and B
 	    WHEN "011100" =>	 
 		Res <= outOr; -- A OR B
